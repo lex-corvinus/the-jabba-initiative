@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="globals.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="aquarium">
+            <div id="glass-back" class="glass"></div>
+            <div id="aquarium-floors"></div>
+            <div id="glass-front" class="glass"></div>
+        </div>
+
+        <div id="ui">
+            <div style="-webkit-app-region: drag; flex-grow: 1; color: white; padding-left: 10px;">Drag Here</div>
+            <button id="btn-frog" style="-webkit-app-region: no-drag;">Spawn Frog</button>
+            <button id="btn-food" style="-webkit-app-region: no-drag;">Spawn Food</button>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "the-jabba-initiative",
+  "version": "1.0.0",
+  "description": "INITIALIZATION",
+  "homepage": "https://github.com/lex-corvinus/the-jabba-initiative#readme",
+  "bugs": {
+    "url": "https://github.com/lex-corvinus/the-jabba-initiative/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lex-corvinus/the-jabba-initiative.git"
+  },
+
+  "license": "ISC",
+  "type": "module",
+  "main": "src/main.js",
+
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "devDependencies": {
+    "electron": "=41.2.2"
+  }
+}
