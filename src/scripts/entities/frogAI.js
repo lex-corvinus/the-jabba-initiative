@@ -4,7 +4,8 @@ export class Frog {
         this.x = x;
         this.el = element;
         this.width = 17;
-        this.speed = 8; // Pixels per tick
+        this.speed = 8;
+        this.roamSpeed = 2;
         this.rowData = rowData;
         this.updateDOM();
     }
@@ -47,12 +48,12 @@ export class Frog {
     }
 
     roam() {
-        if (Math.random() < 0.3) {
+        if (Math.random() < 0.1) {
             const dir = Math.random() < 0.5 ? 1 : -1;
             if (this.row + dir >= 1 && this.row + dir <= 4) this.row += dir;
         } else {
             const dir = Math.random() < 0.5 ? 1 : -1;
-            this.x += dir * this.speed;
+            this.x += dir * this.roamSpeed;
         }
     }
 

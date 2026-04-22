@@ -1,14 +1,11 @@
-import { app, BrowserWindow } from 'electron';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path');
 
 function createWindow() {
+
     const win = new BrowserWindow({
-        width: 500,  // Increased from 400
-        height: 450, // Increased from 350
+        width: 500,
+        height: 450,
         transparent: true,
         frame: false,
         alwaysOnTop: true,
@@ -22,12 +19,15 @@ function createWindow() {
     });
 
     win.loadFile(path.join(__dirname, 'index.html'));
-
-    win.webContents.openDevTools({ mode: 'detach' });
 }
 
 app.whenReady().then(() => {
     createWindow();
+
+    ipcMain.on('open-logs-window', (event) => {
+        const webContents = event.sender;
+        webContents.openDevTools({ mode: 'detach' });
+    });
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();

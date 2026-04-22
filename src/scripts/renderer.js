@@ -56,6 +56,10 @@ document.getElementById('btn-deco').addEventListener('click', () => {
     else spawnEntity('stone', 'stone', 15);
 });
 
+document.getElementById('btn-logs').addEventListener('click', () => {
+    window.electronAPI.openLogs();
+});
+
 setInterval(() => {
     frogs.forEach(frog => frog.update(foods));
-}, 500); // 500ms AI tick
+}, 500);
