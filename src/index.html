@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="EN">
 <head>
     <link rel="stylesheet" href="globals.css">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
 </head>
-
 <body>
-    <div id="game-container">
-        <div id="aquarium">
-            <div id="glass-back" class="glass"></div>
-            <div id="aquarium-floors"></div>
-            <div id="glass-front" class="glass"></div>
-        </div>
+<div id="game-container">
+    <div id="aquarium">
+        <div id="bg" class="full-scene" style="z-index: 0;"></div>
 
-        <div id="ui">
-            <div style="-webkit-app-region: drag; flex-grow: 1; color: white; padding-left: 10px;">Drag Here</div>
-            <button id="btn-frog" style="-webkit-app-region: no-drag;">Spawn Frog</button>
-            <button id="btn-food" style="-webkit-app-region: no-drag;">Spawn Food</button>
-        </div>
+        <div id="layer4" class="full-scene" style="z-index: 10;"></div>
+        <div id="layer3" class="full-scene" style="z-index: 20;"></div>
+        <div id="layer2" class="full-scene" style="z-index: 30;"></div>
+        <div id="layer1" class="full-scene" style="z-index: 40;"></div>
+
+        <div id="front" class="full-scene" style="z-index: 100;"></div>
+
     </div>
-    <script src="renderer.js"></script>
-</body>
 
+    <div id="ui">
+        <div style="-webkit-app-region: drag; flex-grow: 1; color: white; padding-left: 10px;">Drag UI</div>
+        <button id="btn-frog" style="-webkit-app-region: no-drag;">Spawn Frog</button>
+        <button id="btn-food" style="-webkit-app-region: no-drag;">Spawn Food</button>
+        <button id="btn-deco" style="-webkit-app-region: no-drag;">Add Deco</button>
+    </div>
+</div>
+<script type="module" src="scripts/renderer.js"></script>
+<script type="module" src="renderer.js"></script>
+</body>
 </html>

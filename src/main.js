@@ -7,8 +7,8 @@ const __dirname = path.dirname(__filename);
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 400,
-        height: 350,
+        width: 500,  // Increased from 400
+        height: 450, // Increased from 350
         transparent: true,
         frame: false,
         alwaysOnTop: true,
@@ -22,6 +22,8 @@ function createWindow() {
     });
 
     win.loadFile(path.join(__dirname, 'index.html'));
+
+    win.webContents.openDevTools({ mode: 'detach' });
 }
 
 app.whenReady().then(() => {
